@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = "https://top-blog-jwt-api-bend-production.up.railway.app/api";
 
 export async function apiRequest(endpoint, options = {}) {
   const url = `${BASE_URL}${endpoint}`;

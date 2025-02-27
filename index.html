@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>a bolg</title>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <header class="glass">
+        <div><a href="/">&lt; a &gt; blog</a></div>
+        <nav>
+          <ul>
+            <li><button id="authorship">Become an author</button></li>
+            <li><button id="subscription">Subscribe</button></li>
+            <li id="dynamic"></li>
+            <button id="mode-btn">☀️ 🌒</button>
+            <div class="glass" id="theme-toggle">
+              <div id="auto" value="auto">Auto (System Preference)</div>
+              <div id="light" value="light">Light Mode</div>
+              <div id="dark" value="dark">Dark Mode</div>
+            </div>
+          </ul>
+        </nav>
+      </header>
+      <dialog id="modal">
+        <div>
+          <div id="modal-body"></div>
+          <button id="closeModal">❌</button>
+        </div>
+      </dialog>
+
+      <main id="app"></main>
+    </div>
+    <footer>
+      <p>
+        made with fraustration by this guy
+        <a href="https://github.com/kad5">kad5</a>
+      </p>
+    </footer>
+    <script>
+      const updateCursor = ({ x, y }) => {
+        document.documentElement.style.setProperty("--x", x);
+        document.documentElement.style.setProperty("--y", y);
+      };
+      document.body.addEventListener("pointermove", updateCursor);
+    </script>
+    <script type="module" src="./index.js"></script>
+  </body>
+</html>

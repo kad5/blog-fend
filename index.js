@@ -1,6 +1,6 @@
 import { Router } from "./src/utils/router.js";
 import { State } from "./src/utils/state.js";
-import "./src/styles/styles.css";
+//import "./src/styles/styles.css";
 
 const state = new State();
 window.state = state;

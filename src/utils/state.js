@@ -91,6 +91,13 @@ export class State {
 
   async logout() {
     await authCalls.logout();
-    //window.location.href = "/";
+    this.updateState({
+      isAuthenticated: false,
+      username: null,
+      userId: null,
+      role: null,
+      isPaying: false,
+    });
+    window.location.href = "/";
   }
 }

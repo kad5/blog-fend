@@ -57,8 +57,17 @@ export function authFormsHTML(signup = null) {
       e.preventDefault();
       const formData = new FormData(e.target);
       const payload = Object.fromEntries(formData);
-      await authCalls.login(payload);
-      window.location.href = "/";
+      const response = await authCalls.login(payload);
+      if (response) {
+        window.state.updateState({
+          isAuthenticated: true,
+          username: response.username,
+          userId: response.id,
+          role: response.role,
+          isPaying: response.isPaying,
+        });
+        window.location.href = "/";
+      }
     });
 
   container
@@ -67,8 +76,17 @@ export function authFormsHTML(signup = null) {
       e.preventDefault();
       const formData = new FormData(e.target);
       const payload = Object.fromEntries(formData);
-      await authCalls.signup(payload);
-      window.location.href = "/";
+      const response = await authCalls.signup(payload);
+      if (response) {
+        window.state.updateState({
+          isAuthenticated: true,
+          username: response.username,
+          userId: response.id,
+          role: response.role,
+          isPaying: response.isPaying,
+        });
+        window.location.href = "/";
+      }
     });
   setLoginListeners(container, signup);
   return container;
